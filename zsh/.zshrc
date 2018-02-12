@@ -12,6 +12,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source iTerm2 shell integration
+if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
+fi
+
 # Customize to your needs...
 # Prompts
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
