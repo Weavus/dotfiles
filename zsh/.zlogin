@@ -18,8 +18,8 @@
 [[ -o INTERACTIVE && -t 2 ]] && {
 
   # Print a random, hopefully interesting, adage.
-  if (( $+commands[fortune] )); then
-    fortune -s
+  if (( $+commands[neofetch] )); then
+    neofetch
     print
   fi
 
