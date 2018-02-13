@@ -51,7 +51,7 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 colorEcho "Linking dotfiles..."
 if [ -x "$(command -v stow)" ]; then
   colorEcho "Using stow..."
-  ${ZDOTDIR:-$HOME}/.dotfiles/make stow
+  cd ${ZDOTDIR:-$HOME}/.dotfiles/ && make stow
 else
   colorEcho "Manually linking dotfiles..."
   ${ZDOTDIR:-$HOME}/.dotfiles/manually-link-files.sh
