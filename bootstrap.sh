@@ -49,7 +49,13 @@ colorEcho "Install prezto..."
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 colorEcho "Linking dotfiles..."
-${ZDOTDIR:-$HOME}/.dotfiles/make stow
+if [ -x "$(command -v stow)" ]; then
+  colorEcho "Using stow..."
+  ${ZDOTDIR:-$HOME}/.dotfiles/make stow
+else
+  colorEcho "Manually linking dotfiles..."
+  ${ZDOTDIR:-$HOME}/.dotfiles/manually-link-files.sh
+fi
 
 if [ "$(uname)" == "Darwin" ]; then
   colorEcho "Setting zsh as default shell..."
