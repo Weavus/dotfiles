@@ -1,7 +1,8 @@
 #!/bin/bash
 
 for d in ${ZDOTDIR:-$HOME}/.dotfiles/*/ ; do
-    echo "Linking '$d*' to '${ZDOTDIR:-$HOME}'"
-    ln -s $d* ${ZDOTDIR:-$HOME}
+    echo "Linking contents of '$d*' to '${ZDOTDIR:-$HOME}'"
+    cp -as $d.* ~
+    cp -as $d* ~
 done
 ls -al /target
