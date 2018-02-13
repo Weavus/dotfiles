@@ -20,7 +20,6 @@
   # Print a random, hopefully interesting, adage.
   if (( $+commands[neofetch] )); then
     neofetch
-    print
   fi
 
 } >&2
