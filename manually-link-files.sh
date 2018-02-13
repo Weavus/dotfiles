@@ -1,6 +1,7 @@
 #!/bin/bash
 
 for d in ${ZDOTDIR:-$HOME}/.dotfiles/*/ ; do
-    echo "Linking $d* to ${ZDOTDIR:-$HOME}"
-    ln -s "$d/*" "${ZDOTDIR:-$HOME}"
+    echo "Linking '$d*' to '${ZDOTDIR:-$HOME}'"
+    ln -s "$d*" "${ZDOTDIR:-$HOME}"
 done
+ls -al /target
