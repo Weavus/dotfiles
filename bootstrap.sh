@@ -35,9 +35,9 @@ if [ "$(uname)" == "Darwin" ]; then
   colorEcho "Installing node global modules..."
   npm i -g vtop
 
-  colorEcho "Update pip..."
-  pip install --upgrade setuptools
-  pip install --upgrade pip
+  #colorEcho "Update pip..."
+  #pip install --upgrade setuptools
+  #pip install --upgrade pip
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
 fi
