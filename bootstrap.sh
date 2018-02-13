@@ -8,9 +8,6 @@ function colorEcho () {
     printf "${RED} $1${NORMAL}\n"
 }
 
-colorEcho "Cloning dotfiles..."
-git clone --recursive https://github.com/weavus/dotfiles.git "${ZDOTDIR:-$HOME}/.dotfiles"
-
 if [ "$(uname)" == "Darwin" ]; then
   colorEcho "Installing homebrew..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -44,6 +41,9 @@ if [ "$(uname)" == "Darwin" ]; then
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
 fi
+
+colorEcho "Cloning dotfiles..."
+git clone --recursive https://github.com/weavus/dotfiles.git "${ZDOTDIR:-$HOME}/.dotfiles"
 
 colorEcho "Install prezto..."
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
