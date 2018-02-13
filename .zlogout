@@ -9,9 +9,5 @@
 [[ -o INTERACTIVE && -t 2 ]] && {
 
 # Print the message.
-cat <<-EOF
-
-Logout
-EOF
 
 } >&2
