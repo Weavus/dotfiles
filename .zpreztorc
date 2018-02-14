@@ -41,7 +41,6 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
-  'ssh' \
   'prompt'
 
 #
@@ -166,8 +165,8 @@ zstyle ':prezto:module:prompt' theme 'powerlevel9k'
 #
 
 # Set the SSH identities to load into the agent.
-zstyle ':prezto:module:ssh-agent' forwarding 'yes'
-zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_thomsonreuters' 'id_amazon' 'id_github'
+#zstyle ':prezto:module:ssh-agent' forwarding 'yes'
+#zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_thomsonreuters' 'id_amazon' 'id_github'
 
 #
 # Syntax Highlighting
