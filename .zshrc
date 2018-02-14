@@ -4,6 +4,7 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
+export TERM="xterm-256color"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 
@@ -20,12 +21,12 @@ fi
 # Customize to your needs...
 # Prompts
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon ssh context dir virtualenv vcs)
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon ssh context root_indicator dir dir_writable virtualenv vcs)
 else
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir virtualenv vcs)
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user root_indicator dir dir_writable virtualenv vcs)
 fi
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status load time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs load time)
 
 DEFAULT_USER="weavus"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -42,8 +43,8 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_DELIMITER=..
-POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B4'
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B6'
+#POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B4'
+#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR='\uE0B6'
 
 POWERLEVEL9K_VIRTUALENV_BACKGROUND=107
 POWERLEVEL9K_VIRTUALENV_FOREGROUND='white'

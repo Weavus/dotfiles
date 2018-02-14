@@ -20,7 +20,6 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install python
   brew install coreutils
   brew install shellcheck
-  brew install stow
   brew install ack
   brew install tree
   brew install httpie
