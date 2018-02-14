@@ -18,6 +18,61 @@ if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
 fi
 
+# Add homebrew to the completion path
+fpath=("/usr/local/bin/" $fpath)
+
+# why would you type 'cd dir' if you could just type 'dir'?
+setopt AUTO_CD
+
+# Now we can pipe to multiple outputs!
+setopt MULTIOS
+
+# This makes cd=pushd
+setopt AUTO_PUSHD
+
+# This will use named dirs when possible
+setopt AUTO_NAME_DIRS
+
+setopt IGNORE_EOF
+
+# If I could disable Ctrl-s completely I would!
+setopt NO_FLOW_CONTROL
+
+# Keep echo "station" > station from clobbering station
+setopt NO_CLOBBER
+
+# Case insensitive globbing
+setopt NO_CASE_GLOB
+
+# Be Reasonable!
+setopt NUMERIC_GLOB_SORT
+
+# I don't know why I never set this before.
+setopt EXTENDED_GLOB
+
+# hows about arrays be awesome?  (that is, frew${cool}frew has frew surrounding all the variables, not just first and last
+setopt RC_EXPAND_PARAM
+
+# Who doesn't want home and end to work?
+bindkey '\e[1~' beginning-of-line
+bindkey '\e[4~' end-of-line
+
+# Incremental search is elite!
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
+
+# Search based on what you typed in already
+bindkey -M vicmd "//" history-beginning-search-backward
+bindkey -M vicmd "??" history-beginning-search-forward
+
+bindkey "\eOP" run-help
+
+# oh wow!  This is killer...  try it!
+bindkey -M vicmd "q" push-line
+
+# it's like, space AND completion.  Gnarlbot.
+bindkey -M viins ' ' magic-space
+
 # Customize to your needs...
 # Prompts
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
