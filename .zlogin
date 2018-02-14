@@ -12,12 +12,11 @@
   if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
     zcompile "$zcompdump"
   fi
-} &!
+} &! 
 
 # Execute code only if STDERR is bound to a TTY.
 [[ -o INTERACTIVE && -t 2 ]] && {
 
-  # Print a random, hopefully interesting, adage.
   if (( $+commands[neofetch] )); then
     neofetch
   fi
