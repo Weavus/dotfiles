@@ -36,6 +36,8 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'git' \
+  'homebrew' \
+  'docker' \
   'syntax-highlighting' \
   'history-substring-search' \
   'autosuggestions' \
