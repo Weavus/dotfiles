@@ -74,4 +74,5 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='red'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 
+alias s='ssh'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
