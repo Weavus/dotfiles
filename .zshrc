@@ -21,7 +21,7 @@ fi
 # Customize to your needs...
 # Prompts
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon ssh host_joined user dir dir_writable virtualenv vcs)
+  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon host_joined user dir dir_writable virtualenv vcs)
 else
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir dir_writable virtualenv vcs)
 fi
