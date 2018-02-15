@@ -159,5 +159,9 @@ alias grep='grep --color'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias s='ssh'
-alias git='hub'
+
+if ! type "hub" > /dev/null; then
+	alias git='hub'
+fi
+
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
