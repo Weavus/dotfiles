@@ -10,14 +10,15 @@ function colorEcho () {
 if [ "$(uname)" == "Darwin" ]; then
   colorEcho "Installing homebrew..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew tap homebrew/core
-  brew tap homebrew/versions
   brew tap caskroom/fonts
 
   colorEcho "Brew install..."
   brew install git
+  brew install hub
+  brew install awscli
   brew install node
   brew install python
+  brew install ansible
   brew install coreutils
   brew install shellcheck
   brew install ack
