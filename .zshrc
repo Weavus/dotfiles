@@ -159,6 +159,10 @@ alias grep='grep --color'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias s='ssh'
-alias git='hub'
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+if ! type "hub" > /dev/null; then
+    alias git='hub'
+fi
+alias showfiles=’defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app’
+alias hidefiles=’defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app’
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
