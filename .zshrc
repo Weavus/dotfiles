@@ -160,6 +160,7 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias s='ssh'
 alias header='curl -I -s'
+alias json='python -m json.tool'
 
 #if [ "$(uname)" == "Darwin" ]; then
     alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
