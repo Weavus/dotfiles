@@ -162,13 +162,13 @@ alias s='ssh'
 alias header='curl -I -s'
 alias json='python -m json.tool'
 
-#if [ "$(uname)" == "Darwin" ]; then
+if [[ "$OSTYPE" == darwin* ]]; then
     alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
     if ! type "hub" > /dev/null; then
         alias git='hub'
     fi
-    #alias showfiles=’defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app’
-    #alias hidefiles=’defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app’
-#fi
+    alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+    alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+fi
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
