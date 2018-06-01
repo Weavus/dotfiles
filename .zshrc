@@ -76,6 +76,8 @@ setopt EXTENDED_GLOB
 # hows about arrays be awesome?  (that is, frew${cool}frew has frew surrounding all the variables, not just first and last
 setopt RC_EXPAND_PARAM
 
+setopt NO_CORRECT
+
 # Who doesn't want home and end to work?
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
