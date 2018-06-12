@@ -11,6 +11,7 @@ if [ "$(uname)" == "Darwin" ]; then
   colorEcho "Installing homebrew..."
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   brew tap caskroom/fonts
+  brew tap homebrew/cask
 
   colorEcho "Brew install..."
   brew install git
@@ -27,9 +28,42 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install diff-so-fancy
   brew install neofetch
   brew install zsh
+  brew install mas
 
   colorEcho "Installing fonts using brew cask..."
   brew cask install font-meslo-nerd-font
+
+  colorEcho "Installing other applications using brew cask..."
+  brew cask install iterm2
+  brew cask install google-chrome-beta
+  brew cask install 1password
+  brew cask install agenda
+  brew cask install alfred
+  brew cask install atom
+  brew cask install bartender
+  brew cask install controlplane
+  brew cask install tower
+  brew cask install little-snitch
+
+  colorEcho "Installing MAS applications using mas..."
+  mas signin weavus@icloud.com
+  # Remote Desktop (3.9)
+  # mas install 409907375
+  # Xcode (9.4)
+  # mas install 497799835
+  # Slack (3.2.0)
+  # mas install 803453959
+  # Moom (3.2.11)
+  mas install 419330170
+  # Pixelmator (3.7)
+  # mas install 407963104
+  # Blackmagic Disk Speed Test (3.1)
+  mas install 425264550
+  # Reeder (3.1.2)
+  # mas install 880001334 
+  # DaisyDisk (4.6.1)
+  mas install 411643860
+
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
 fi
