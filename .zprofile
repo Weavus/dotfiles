@@ -5,6 +5,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+export CRAZURE_SSHKEY='~/.ssh/id_thomsonreuters'
+
 #
 # Browser
 #
