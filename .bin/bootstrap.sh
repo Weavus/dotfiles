@@ -16,9 +16,6 @@ if [ "$(uname)" == "Darwin" ]; then
   colorEcho "Brew install..."
   brew install git
   brew install hub
-  brew install awscli
-  brew install node
-  brew install python
   brew install ansible
   brew install coreutils
   brew install shellcheck
@@ -35,34 +32,46 @@ if [ "$(uname)" == "Darwin" ]; then
 
   colorEcho "Installing other applications using brew cask..."
   brew cask install iterm2
-  brew cask install google-chrome-beta
+  brew cask install google-chrome
+  brew cask install microsoft-edge
   brew cask install 1password
-  brew cask install agenda
   brew cask install alfred
-  brew cask install atom
+  brew cask install visual-studio-code
   brew cask install bartender
   brew cask install controlplane
   brew cask install tower
   brew cask install little-snitch
+  brew cask install royal-tsx
+  brew cask install db-browser-for-sqlite
+  brew cask install microsoft-teams
+  brew cask install private-internet-access
+  brew cask install postman
+  brew cask install cheatsheet
 
   colorEcho "Installing MAS applications using mas..."
   mas signin weavus@icloud.com
-  # Remote Desktop (3.9)
-  # mas install 409907375
-  # Xcode (9.4)
-  # mas install 497799835
-  # Slack (3.2.0)
-  # mas install 803453959
-  # Moom (3.2.11)
+  # Microsoft Remote Desktop
+  mas install 409907375
+  # Moom
   mas install 419330170
-  # Pixelmator (3.7)
-  # mas install 407963104
-  # Blackmagic Disk Speed Test (3.1)
+  # Pixelmator
+  mas install 407963104
+  # Blackmagic Disk Speed Test
   mas install 425264550
-  # Reeder (3.1.2)
-  # mas install 880001334 
-  # DaisyDisk (4.6.1)
+  # Reeder
+  mas install 880001334 
+  # DaisyDisk
   mas install 411643860
+  # Microsoft To Do
+  mas install 1274495053
+  # The Unarchiver
+  mas install 425424353
+  # Bear
+  mas install 1091189122
+  # The Clock
+  mas install 488764545
+  # Bumpr
+  mas install 1166066070
 
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
