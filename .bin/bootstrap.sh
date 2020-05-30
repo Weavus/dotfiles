@@ -8,8 +8,11 @@ function colorEcho () {
 }
 
 if [ "$(uname)" == "Darwin" ]; then
-  colorEcho "Installing homebrew..."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  if ! command -v brew >/dev/null 2>&1; then  
+    colorEcho "Installing homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
   brew tap caskroom/fonts
   brew tap homebrew/cask
 
@@ -72,6 +75,9 @@ if [ "$(uname)" == "Darwin" ]; then
   mas install 488764545
   # Bumpr
   mas install 1166066070
+
+  colorEcho "Setting iTerm preference folder..."
+  defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/Documents/Config/iTerm"
 
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
