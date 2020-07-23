@@ -25,13 +25,27 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install ack
   brew install tree
   brew install httpie
+  brew install telnet
+  brew install mackup
+  brew install bluetoothconnector
   brew install diff-so-fancy
   brew install neofetch
+  brew install exiftool
+  brew install mkvtoolnix
+  brew install wget
+  brew install tmux
+  brew install jq
   brew install zsh
   brew install mas
 
   colorEcho "Installing fonts using brew cask..."
-  brew cask install font-meslo-nerd-font
+  brew cask install font-meslolg-nerd-font
+  brew cask install font-saucecodepro-nerd-font
+  brew cask install font-cascadia-mono-pl
+  brew cask install font-cascadia-pl
+  brew cask install font-cascadia-mono
+  brew cask install font-cascadia
+  brew cask install font-fira-code
 
   colorEcho "Installing other applications using brew cask..."
   brew cask install iterm2
@@ -47,8 +61,11 @@ if [ "$(uname)" == "Darwin" ]; then
   brew cask install royal-tsx
   brew cask install db-browser-for-sqlite
   brew cask install microsoft-teams
+  brew cask install datagrip
   brew cask install private-internet-access
   brew cask install postman
+  brew cask install hyper
+  brew cask install multipass
   brew cask install cheatsheet
 
   colorEcho "Installing MAS applications using mas..."

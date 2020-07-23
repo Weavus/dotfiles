@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #
 # Executes commands at the start of an interactive session.
 #
@@ -165,7 +172,7 @@ alias header='curl -I -s'
 alias json='python -m json.tool'
 
 if [[ "$OSTYPE" == darwin* ]]; then
-    alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+    alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
     if ! type "hub" > /dev/null; then
         alias git='hub'
     fi
@@ -174,3 +181,6 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
