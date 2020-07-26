@@ -48,7 +48,8 @@ if [ "$(uname)" == "Darwin" ]; then
   brew cask install font-fira-code
 
   colorEcho "Installing other applications using brew cask..."
-  brew cask install iterm2
+  # brew cask install iterm2
+  brew cask install hyper
   brew cask install google-chrome
   brew cask install microsoft-edge
   brew cask install 1password
@@ -64,7 +65,6 @@ if [ "$(uname)" == "Darwin" ]; then
   brew cask install datagrip
   brew cask install private-internet-access
   brew cask install postman
-  brew cask install hyper
   brew cask install multipass
   brew cask install cheatsheet
 
