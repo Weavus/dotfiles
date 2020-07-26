@@ -138,6 +138,19 @@ module.exports = {
     webGLRenderer: true,
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+
+    hyperPostprocessing: {
+			// defaults to `${HOME}/.hyper-postprocessing.js`
+			entry: '/users/Weavus/.hyper_plugins/hyper-postprocessing.js'
+		},
+
+    hyperTabs: {
+      trafficButtons: true,
+      tabIcons: true,
+      tabIconsColored: true,
+      closeAlign: 'right',
+      activityPulse: true
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -146,7 +159,17 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyper-dracula", "hyper-pane", "hyper-search"],
+  plugins: [
+    "hyper-dracula",
+    "hyper-pane",
+    "hyper-search",
+    "hyper-tabs-enhanced",
+    "hyperterm-1password",
+    "hyper-highlight-active-pane",
+    "hyperborder",
+    "hyper-quit",
+    "hyper-broadcast"
+  ],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
