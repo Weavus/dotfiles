@@ -19,9 +19,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Source iTerm2 shell integration
-if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
-fi
+#if [[ -s "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh" ]]; then
+#  source "${ZDOTDIR:-$HOME}/.iterm2_shell_integration.zsh"
+#fi
 
 # Add homebrew to the completion path
 fpath=("/usr/local/bin/" $fpath)
@@ -56,8 +56,6 @@ setopt RM_STAR_WAIT
 
 # use magic (this is default, but it can't hurt!)
 setopt ZLE
-
-export EDITOR="vsc"
 
 setopt NO_HUP
 
@@ -103,6 +101,7 @@ bindkey -M vicmd "q" push-line
 # it's like, space AND completion.  Gnarlbot.
 bindkey -M viins ' ' magic-space
 
+alias cd..='cd ..'
 alias df='df -h'
 alias du='du -h'
 alias less='less -R'
@@ -114,12 +113,13 @@ alias header='curl -I -s'
 alias json='python -m json.tool'
 
 if [[ "$OSTYPE" == darwin* ]]; then
-    alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
-    if ! type "hub" > /dev/null; then
-        alias git='hub'
-    fi
-    alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-    alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+  export EDITOR="vsc"
+  alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+  if ! type "hub" > /dev/null; then
+    alias git='hub'
+  fi
+  alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+  alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 fi
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
