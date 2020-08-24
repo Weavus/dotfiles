@@ -13,7 +13,7 @@ if [ "$(uname)" == "Darwin" ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  brew tap caskroom/fonts
+  brew tap homebrew/cask-fonts
   brew tap homebrew/cask
 
   colorEcho "Brew install..."
@@ -40,8 +40,8 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install mas
 
   colorEcho "Installing fonts using brew cask..."
-  brew cask install font-meslolg-nerd-font
-  brew cask install font-saucecodepro-nerd-font
+  brew cask install font-meslo-lg-nerd-font
+  brew cask install font-sauce-code-pro-nerd-font
   brew cask install font-cascadia-mono-pl
   brew cask install font-cascadia-pl
   brew cask install font-cascadia-mono
