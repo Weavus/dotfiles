@@ -139,10 +139,30 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
 
-    hyperPostprocessing: {
-			// defaults to `${HOME}/.hyper-postprocessing.js`
-			entry: '/users/Weavus/.hyper_plugins/hyper-postprocessing.js'
-		},
+    paneNavigation: {
+      debug: false,
+      hotkeys: {
+        navigation: {
+          up: 'ctrl+alt+up',
+          down: 'ctrl+alt+down',
+          left: 'ctrl+alt+left',
+          right: 'ctrl+alt+right'
+        },
+        jump_prefix: 'ctrl+alt', // completed with 1-9 digits
+        permutation_modifier: 'shift', // Added to jump and navigation hotkeys for pane permutation
+        maximize: 'meta+enter'
+      },
+      showIndicators: true, // Show pane number
+      indicatorPrefix: '^⌥', // Will be completed with pane number
+      indicatorStyle: { // Added to indicator <div>
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        fontSize: '10px'
+      },
+      focusOnMouseHover: false,
+      inactivePaneOpacity: 0.7 // Set to 1 to disable inactive panes dimming
+    },
 
     hyperTabs: {
       trafficButtons: true,
@@ -165,7 +185,6 @@ module.exports = {
     "hyper-search",
     "hyper-tabs-enhanced",
     "hyperterm-1password",
-    "hyper-highlight-active-pane",
     "hyperborder",
     "hyper-quit",
     "hyper-broadcast"

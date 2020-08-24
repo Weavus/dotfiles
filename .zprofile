@@ -79,3 +79,6 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+export BAMS_USERNAME="stephen.lamb"
+export BAMS_URL=https://${BAMS_USERNAME}@bams-aws.refinitiv.com/artifactory/api/pypi/default.pypi.global/simple
