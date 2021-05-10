@@ -57,9 +57,9 @@ zstyle ':prezto:load' pmodule \
 # Set the entries to ignore in static */etc/hosts* for host completion.
 # zstyle ':prezto:module:completion:*:hosts' etc-host-ignores \
 #   '0.0.0.0' '127.0.0.1'
-zstyle -e ':completion:*:ssh:*' hosts 'reply=(${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2> /dev/null)"}:#host *}#host }:#*\**}:#*\?*}})'
-zstyle -e ':completion:*:scp:*' hosts 'reply=(${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2> /dev/null)"}:#host *}#host }:#*\**}:#*\?*}})'
-zstyle -e ':completion:*:rsync:*' hosts 'reply=(${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2> /dev/null)"}:#host *}#host }:#*\**}:#*\?*}})'
+# zstyle -e ':completion:*:ssh:*' hosts 'reply=(${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2> /dev/null)"}:#host *}#host }:#*\**}:#*\?*}})'
+# zstyle -e ':completion:*:scp:*' hosts 'reply=(${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2> /dev/null)"}:#host *}#host }:#*\**}:#*\?*}})'
+# zstyle -e ':completion:*:rsync:*' hosts 'reply=(${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2> /dev/null)"}:#host *}#host }:#*\**}:#*\?*}})'
 
 #
 # Editor

@@ -124,5 +124,20 @@ fi
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+if [[ -s "${ZDOTDIR:-$HOME}/.lscolors" ]]; then
+  source "${ZDOTDIR:-$HOME}/.lscolors"
+fi
+
+function refresh_ssh_autocomplete () {
+    host_list=($(cat ~/.ssh/config ~/.ssh/infrastructure/* | grep -i 'Host ' | grep -v '\*' | awk '{s = s $2 " "} END {print s}'))
+    # zstyle -e ':completion:*:(ssh|scp|sftp|rsync):*' 'reply=($host_list)'
+    zstyle -e ':completion:*' hosts 'reply=($host_list)'
+    # echo "SSH Refresh - ${host_list}"
+}
+refresh_ssh_autocomplete
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+/usr/bin/keychain --nogui $HOME/.ssh/id_rsa
+source $HOME/.keychain/Ultramagnus-sh
