@@ -139,5 +139,7 @@ refresh_ssh_autocomplete
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-/usr/bin/keychain --nogui $HOME/.ssh/id_rsa
-source $HOME/.keychain/Ultramagnus-sh
+if [[ "$OSTYPE" == linux-gnu ]]; then
+  /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
+  source $HOME/.keychain/Ultramagnus-sh
+fi
