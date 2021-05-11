@@ -126,6 +126,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 if [[ -s "${ZDOTDIR:-$HOME}/.lscolors" ]]; then
   source "${ZDOTDIR:-$HOME}/.lscolors"
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
 function refresh_ssh_autocomplete () {
@@ -143,3 +144,4 @@ if [[ "$OSTYPE" == linux-gnu ]]; then
   /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
   source $HOME/.keychain/Ultramagnus-sh
 fi
+
