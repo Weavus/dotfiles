@@ -109,6 +109,7 @@ alias grep='grep --color'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias s='ssh'
+alias d='kitty +kitten diff'
 alias header='curl -I -s'
 alias json='python -m json.tool'
 
@@ -141,7 +142,8 @@ refresh_ssh_autocomplete
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [[ "$OSTYPE" == linux-gnu ]]; then
-  /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
-  source $HOME/.keychain/Ultramagnus-sh
+  if [[ -s "/usr/bin/keychain" ]]; then
+    /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
+    source $HOME/.keychain/Ultramagnus-sh
+  fi
 fi
-
