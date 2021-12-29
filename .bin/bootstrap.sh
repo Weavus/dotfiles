@@ -18,84 +18,68 @@ if [ "$(uname)" == "Darwin" ]; then
 
   colorEcho "Brew install..."
   brew install git
+  brew install zsh
   brew install hub
-  brew install ansible
   brew install coreutils
   brew install shellcheck
   brew install ack
   brew install htop
+  brew install btop
   brew install tree
   brew install httpie
   brew install telnet
   brew install mackup
-  brew install bluetoothconnector
-  brew install diff-so-fancy
   brew install neofetch
-  brew install exiftool
-  brew install mkvtoolnix
   brew install wget
   brew install tmux
   brew install jq
-  brew install zsh
+  brew install ansible
   brew install mas
 
   colorEcho "Installing fonts using brew cask..."
-  brew cask install font-meslo-lg-nerd-font
-  brew cask install font-sauce-code-pro-nerd-font
-  brew cask install font-cascadia-mono-pl
-  brew cask install font-cascadia-pl
-  brew cask install font-cascadia-mono
-  brew cask install font-cascadia
-  brew cask install font-fira-code
+  brew install --cask font-meslo-lg-nerd-font
 
   colorEcho "Installing other applications using brew cask..."
-  # brew cask install iterm2
-  brew cask install hyper
-  brew cask install google-chrome
-  brew cask install microsoft-edge
-  brew cask install 1password
-  brew cask install alfred
-  brew cask install visual-studio-code
-  brew cask install bartender
-  brew cask install controlplane
-  brew cask install tower
-  brew cask install little-snitch
-  brew cask install royal-tsx
-  brew cask install db-browser-for-sqlite
-  brew cask install microsoft-teams
-  brew cask install datagrip
-  brew cask install private-internet-access
-  brew cask install postman
-  brew cask install multipass
-  brew cask install cheatsheet
+  brew install --cask 1password
+  brew install --cask little-snitch
+  brew install --cask kitty
+  #brew install --cask visual-studio-code
+  brew install --cask microsoft-edge
+  #brew install --cask microsoft-teams
+  brew install --cask alfred
+  brew install --cask bartender
+  brew install --cask royal-tsx
+  # brew install --cask controlplane
+  brew install --cask private-internet-access
+  brew install --cask postman
+  brew install --cask multipass
+  brew install --cask cheatsheet
 
   colorEcho "Installing MAS applications using mas..."
   mas signin weavus@icloud.com
-  # Microsoft Remote Desktop
-  mas install 409907375
   # Moom
   mas install 419330170
-  # Pixelmator
-  mas install 407963104
+  # Pixelmator Pro
+  mas install 1289583905
   # Blackmagic Disk Speed Test
   mas install 425264550
-  # Reeder
-  mas install 880001334 
   # DaisyDisk
   mas install 411643860
-  # Microsoft To Do
-  mas install 1274495053
   # The Unarchiver
   mas install 425424353
-  # Bear
-  mas install 1091189122
   # The Clock
   mas install 488764545
   # Bumpr
   mas install 1166066070
+  # UpNote
+  mas install 1398373917
+  # Vinegar YouTube Cleaner
+  mas install 1591303229
+  # AdGuard Safari
+  mas install 1440147259
 
-  colorEcho "Setting iTerm preference folder..."
-  defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/Documents/Config/iTerm"
+  #colorEcho "Setting iTerm preference folder..."
+  #defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/Documents/Config/iTerm"
 
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
@@ -122,8 +106,8 @@ dotfiles config status.showUntrackedFiles no
 
 colorEcho "Setting zsh as default shell..."
 if [ "$(uname)" == "Darwin" ]; then
-  echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells > /dev/null
-  chsh -s /usr/local/bin/zsh
+  echo "/opt/homebrew/bin/zsh" | sudo tee -a /etc/shells > /dev/null
+  chsh -s /opt/homebrew/bin/zsh
 else
   chsh -s /bin/zsh
 fi

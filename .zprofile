@@ -82,3 +82,7 @@ fi
 
 export BAMS_USERNAME="stephen.lamb"
 export BAMS_URL=https://${BAMS_USERNAME}@bams-aws.refinitiv.com/artifactory/api/pypi/default.pypi.global/simple
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
