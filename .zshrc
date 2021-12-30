@@ -114,7 +114,7 @@ alias header='curl -I -s'
 alias json='python -m json.tool'
 
 if [[ "$OSTYPE" == darwin* ]]; then
-  export EDITOR="vsc"
+  export EDITOR="code"
   alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
   if ! type "hub" > /dev/null; then
     alias git='hub'
