@@ -23,6 +23,7 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install coreutils
   brew install shellcheck
   brew install ack
+  brew install ripgrep
   brew install htop
   brew install btop
   brew install tree
