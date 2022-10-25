@@ -113,6 +113,14 @@ alias d='kitty +kitten diff'
 alias header='curl -I -s'
 alias json='python -m json.tool'
 
+alias dcup='docker-compose -f ~/Docker/docker-compose.yaml up -d' #brings up all containers if one is not defined after dcup
+alias dcdown='docker-compose -f ~/Docker/docker-compose.yaml stop' #brings down all containers if one is not defined after dcdown
+alias dcpull='docker-compose -f ~/Docker/docker-compose.yaml pull' #pulls all new images unless one is specified
+alias dclogs='docker-compose -f ~/Docker/docker-compose.yaml logs -tf --tail="50" '
+alias dcprune='docker image prune -f'
+alias dctail='docker logs -tf --tail="50" "$@"'
+alias dcupdate='dcdown; dcpull; dcup; dcprune'
+
 if [[ "$OSTYPE" == darwin* ]]; then
   export EDITOR="code"
   alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
