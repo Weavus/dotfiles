@@ -17,8 +17,8 @@
 # Execute code only if STDERR is bound to a TTY.
 [[ -o INTERACTIVE && -t 2 ]] && {
 
-  if (( $+commands[neofetch] )); then
-    neofetch
+  if (( $+commands[macchina] )); then
+    macchina
   fi
 
 } >&2
