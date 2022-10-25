@@ -10,7 +10,7 @@ function colorEcho () {
 if [ "$(uname)" == "Darwin" ]; then
   if ! command -v brew >/dev/null 2>&1; then  
     colorEcho "Installing homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   brew tap homebrew/cask-fonts
@@ -22,21 +22,16 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install hub
   brew install coreutils
   brew install shellcheck
-  brew install ack
   brew install ripgrep
-  brew install htop
   brew install btop
+  brew install lazydocker
   brew install tree
   brew install httpie
-  brew install telnet
-  brew install mackup
-  brew install neofetch
+  #brew install mackup
+  brew install macchina
   brew install wget
-  brew install tmux
   brew install jq
-  brew install ansible
-  brew install mas
-
+  
   colorEcho "Installing fonts using brew cask..."
   brew install --cask font-meslo-lg-nerd-font
 
@@ -44,19 +39,13 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install --cask 1password
   brew install --cask little-snitch
   brew install --cask kitty
-  #brew install --cask visual-studio-code
-  brew install --cask microsoft-edge
-  #brew install --cask microsoft-teams
-  brew install --cask alfred
+  brew install --cask visual-studio-code
   brew install --cask bartender
-  brew install --cask royal-tsx
-  # brew install --cask controlplane
   brew install --cask private-internet-access
-  brew install --cask postman
-  brew install --cask multipass
   brew install --cask cheatsheet
 
-  colorEcho "Installing MAS applications using mas..."
+  #colorEcho "Installing MAS applications using mas..."
+  brew install mas
   mas signin weavus@icloud.com
   # Moom
   mas install 419330170
@@ -68,19 +57,10 @@ if [ "$(uname)" == "Darwin" ]; then
   mas install 411643860
   # The Unarchiver
   mas install 425424353
-  # The Clock
-  mas install 488764545
-  # Bumpr
-  mas install 1166066070
   # UpNote
   mas install 1398373917
-  # Vinegar YouTube Cleaner
-  mas install 1591303229
   # AdGuard Safari
   mas install 1440147259
-
-  #colorEcho "Setting iTerm preference folder..."
-  #defaults write com.googlecode.iterm2 PrefsCustomFolder "$HOME/Documents/Config/iTerm"
 
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
