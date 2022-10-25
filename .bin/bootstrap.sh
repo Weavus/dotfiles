@@ -48,7 +48,6 @@ if [ "$(uname)" == "Darwin" ]; then
 
   #colorEcho "Installing MAS applications using mas..."
   brew install mas
-  mas signin weavus@icloud.com
   # Moom
   mas install 419330170
   # Pixelmator Pro
