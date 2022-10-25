@@ -81,6 +81,11 @@ fi
 export BAMS_USERNAME="stephen.lamb"
 export BAMS_URL=https://${BAMS_USERNAME}@bams-aws.refinitiv.com/artifactory/api/pypi/default.pypi.global/simple
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 if [[ "$OSTYPE" == darwin* ]]; then
   eval $(/opt/homebrew/bin/brew shellenv)
 fi
