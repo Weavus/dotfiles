@@ -153,7 +153,7 @@ refresh_ssh_autocomplete
 
 if [[ "$OSTYPE" == linux-gnu ]]; then
   if [[ -s "/usr/bin/keychain" ]]; then
-    /usr/bin/keychain --nogui $HOME/.ssh/id_rsa
-    source $HOME/.keychain/Ultramagnus-sh
+    /usr/bin/keychain --nogui $HOME/.ssh/id_refinitiv
+    source $HOME/.keychain/Inferno-sh
   fi
 fi
