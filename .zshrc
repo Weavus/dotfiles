@@ -132,6 +132,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dotp='dot push --set-upstream origin master'
+alias dotc='dot commit -a'
 
 if [[ -s "${ZDOTDIR:-$HOME}/.lscolors" ]]; then
   source "${ZDOTDIR:-$HOME}/.lscolors"
