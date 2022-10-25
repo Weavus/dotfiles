@@ -49,19 +49,19 @@ if [ "$(uname)" == "Darwin" ]; then
   #colorEcho "Installing MAS applications using mas..."
   brew install mas
   # Moom
-  mas install 419330170
+  #mas install 419330170
   # Pixelmator Pro
-  mas install 1289583905
+  #mas install 1289583905
   # Blackmagic Disk Speed Test
-  mas install 425264550
+  #mas install 425264550
   # DaisyDisk
-  mas install 411643860
+  #mas install 411643860
   # The Unarchiver
-  mas install 425424353
+  #mas install 425424353
   # UpNote
-  mas install 1398373917
+  #mas install 1398373917
   # AdGuard Safari
-  mas install 1440147259
+  #mas install 1440147259
 
 elif [ "$(expr substr '$(uname -s)' 1 5)" == "Linux" ]; then
   colorEcho "Linux setup..."
